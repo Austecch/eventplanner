@@ -2,14 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
   font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
 }
 
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300;
 }
 
 .btn-secondary {
-  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded;
+  @apply bg-white hover:bg-gray-50 text-gray-800 font-semibold py-3 px-6 rounded-full shadow-lg border border-gray-200 transform hover:scale-105 transition-all duration-300;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-xl p-6 backdrop-blur-sm bg-opacity-95;
+}
+
+.nav-link {
+  @apply text-white hover:text-purple-200 font-medium transition-colors duration-300;
+}
+
+.hero-text {
+  @apply text-5xl md:text-7xl font-bold text-white mb-6 leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl text-purple-100 mb-8 max-w-2xl;
+}
+
+.feature-card {
+  @apply bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-6 border border-white border-opacity-20 hover:bg-opacity-20 transition-all duration-300 transform hover:scale-105;
+}
+
+.input-field {
+  @apply bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl px-4 py-3 text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:border-transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
